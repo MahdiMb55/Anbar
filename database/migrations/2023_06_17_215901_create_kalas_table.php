@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('kalas', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->string('vahed');
+            $table->foreign('anbar_id')
+            ->references('id')->on('anbars')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
