@@ -12,12 +12,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
         \App\Models\User::factory()->create([
             'name' => 'Test User',
             'username' => 'madme',
             'password'=>bcrypt('1234')
         ]);
+
+        $this->call([
+            AnbarSeeder::class,
+            KalaSeeder::class,
+        ]);
+
+
+        // \App\Models\User::factory(10)->create();
+
+
     }
 }
