@@ -219,6 +219,8 @@
 <script>
   $(document).ready(function() {
     $('.select2').select2();
+
+    $('.alert-success').delay(5000).fadeOut('slow');
 });
 </script>
 </body>
