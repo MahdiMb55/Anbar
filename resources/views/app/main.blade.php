@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="{{asset('plugins/iCheck/flat/blue.css')}}">
   <!-- Morris chart -->
   <link rel="stylesheet" href="{{asset('plugins/morris/morris.css')}}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
   <!-- jvectormap -->
   <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
   <!-- Date Picker -->
@@ -182,9 +184,14 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+<!-- Select2 -->
+<script src="{{asset('plugins/select2/select2.full.min.js')}}"></script>
+
+
 <!-- Morris.js charts -->
 <script src="{{asset('plugins/raphael/raphael-min.js')}}"></script>
-<script src="{{asset('plugins/morris/morris.min.js')}}"></script>
+{{-- <script src="{{asset('plugins/morris/morris.min.js')}}"></script> --}}
 <!-- Sparkline -->
 <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
 <!-- jvectormap -->
@@ -209,5 +216,10 @@
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+<script>
+  $(document).ready(function() {
+    $('.select2').select2();
+});
+</script>
 </body>
 </html>
