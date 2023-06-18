@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('vahed');
+            $table->unsignedBigInteger('anbar_id');
             $table->foreign('anbar_id')
             ->references('id')->on('anbars')
             ->onDelete('cascade');

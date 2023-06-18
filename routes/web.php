@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AnbarController;
+use App\Http\Controllers\KalaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +38,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('Anbar/Create', [AnbarController::class,'store'])->name('anbar.store'); 
     Route::get('Anbar', [AnbarController::class,'index'])->name('anbar.index');
 
+    Route::get('Kala/Create', [KalaController::class,'add'])->name('kala.add'); 
+    Route::post('Kala/Create', [KalaController::class,'store'])->name('kala.store'); 
     
 });
