@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AnbarController;
+use App\Http\Controllers\DarkhastController;
 use App\Http\Controllers\KalaController;
 use App\Models\Kala;
 
@@ -48,5 +49,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('Kala/del/{id}', [KalaController::class,'delete'])->name('kala.delete');
     Route::get('Kala/{id}', [KalaController::class,'edit'])->name('kala.edit');
     Route::post('Kala/{id}', [KalaController::class,'update'])->name('kala.update');
+
+
+    Route::get('Darkhast/Create', [DarkhastController::class,'add'])->name('darkhast.add'); 
+
     
 });
