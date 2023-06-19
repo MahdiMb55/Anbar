@@ -20,4 +20,9 @@ class Anbar extends Model
         return $this->hasMany(Kala::class);
     }
 
+    public function darkhasts(): HasMany
+    {
+        return $this->hasMany(Kala::class);
+    }
+
 }

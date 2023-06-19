@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AnbarSeeder::class,
             KalaSeeder::class,
+            DarkhastSeeder::class,
+            DarkhastRowSeeder::class,
         ]);
 
 
