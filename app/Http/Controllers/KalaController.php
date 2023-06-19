@@ -20,7 +20,7 @@ class KalaController extends Controller
 
     public function store(Request $request) {
         $request->validate([
-            'name' => "required|string|min:3",
+            'name' => "required|string|min:3|unique:kalas",
             'anbar_id' => "required|string",
             'vahed' => "required|string|min:2"
         ]);
@@ -43,6 +43,11 @@ class KalaController extends Controller
     }
 
     public function update(Request $request, $id){
+        $request->validate([
+            'name' => "required|string|min:3|unique:kalas",
+            'anbar_id' => "required|string",
+            'vahed' => "required|string|min:2"
+        ]);
         $kala = Kala::findorfail($id);
         $kala->update($request->all());
         return redirect()->route('kala.index')->with('message', 'با موفقیت ویرایش شد !');

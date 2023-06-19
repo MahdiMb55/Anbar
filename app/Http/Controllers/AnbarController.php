@@ -39,6 +39,9 @@ class AnbarController extends Controller
     }
 
     public function update(Request $request, $id){
+        $request->validate([
+            'name' => "required|string|min:3"
+        ]);
         $anbar = Anbar::findorfail($id);
         $anbar->update($request->all());
         return redirect()->route('anbar.index')->with('message', 'با موفقیت ویرایش شد !');
