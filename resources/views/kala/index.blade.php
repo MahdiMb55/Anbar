@@ -6,7 +6,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">ثبت انبار جدید</h1>
+            <h1 class="m-0 text-dark">لیست کالا ها</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -38,19 +38,23 @@
                 <table class="table table-bordered">
                   <tbody><tr>
                     <th style="width: 10px">#</th>
-                    <th>نام</th>
+                    <th>نام کالا</th>
+                    <th>انبار مربوطه</th>
+                    <th>واحد شمارش</th>
                     <th>اقدامات</th>
                   </tr>
 
-                  @foreach($anbars as $anbar)
+                  @foreach($kalas as $kala)
                   <tr>
-                    <td>{{$anbar->id}}</td>
-                    <td>{{$anbar->name}}</td>
+                    <td>{{$kala->id}}</td>
+                    <td>{{$kala->name}}</td>
+                    <td>{{$kala->anbar->name}}</td>
+                    <td>{{$kala->vahed}}</td>
                     <td>
-                      <a class="confirmation" href="{{ route('anbar.delete',['id'=>$anbar->id]) }}">
+                      <a class="confirmation" href="{{ route('kala.delete',['id'=>$kala->id]) }}">
                         <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> حذف</button>
                       </a>
-                    <a href="{{ route('anbar.edit',['id'=>$anbar->id]) }}" >
+                    <a href="{{ route('kala.edit',['id'=>$kala->id]) }}" >
                       <button type="button" class="btn btn-success"><i class="fa fa-pencil-square-o"></i> ویرایش</button>
                     </a>
                     </td>
@@ -60,7 +64,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                {{ $anbars->links() }}  
+                {{ $kalas->links() }}  
               <!-- <ul class="pagination pagination-sm m-0 float-right">
                   <li class="page-item"><a class="page-link" href="#">«</a></li>
                   <li class="page-item"><a class="page-link" href="#">۱</a></li>

@@ -821,3 +821,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 //# sourceMappingURL=adminlte.js.map
+
+$('.confirmation').on('click', function () {
+  return confirm('آیا از انجام این عملیات اطمینان دارید ؟');
+});
