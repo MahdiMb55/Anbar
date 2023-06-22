@@ -20,7 +20,7 @@ class DarkhastRowFactory extends Factory
             'kalaname' => fake()->jobTitle(),
             'count' => fake()->numberBetween(1,5),
             'description' => fake()->text(15),
-            'darkhast_id' => fake()->numberBetween(1,5)
+            'darkhast_id' => fake()->numberBetween(1,2)
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Darkhast;
+use App\Models\DarkhastRow;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +14,7 @@ class DarkhastRowSeeder extends Seeder
      */
     public function run(): void
     {
-        Darkhast::factory()
+        DarkhastRow::factory()
             ->count(6)
             ->create();
     }
