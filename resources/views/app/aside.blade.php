@@ -14,7 +14,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img src="https://www.gravatar.com/avatar/52f0fbcbedee04a121cba8dad1174462?s=200&d=mm&r=g" class="img-circle elevation-2" alt="User Image">
-          </div>  
+          </div>
           <div class="info">
             <a href="#" class="d-block">{{ auth()->user()->name }}</a>
           </div>
@@ -26,73 +26,58 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link active">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
-                  داشبوردها
+                  انبارها
                   <i class="right fa fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link active">
+                  <a href="{{route('anbar.index')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>داشبورد اول</p>
+                    <p>مدیریت انبارها</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
+                  <a href="{{ route('anbar.add')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>داشبورد دوم</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>داشبورد سوم</p>
+                    <p>ایجاد انبار جدید</p>
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fa fa-th"></i>
-                <p>
-                  ویجت‌ها
-                  <span class="right badge badge-danger">جدید</span>
-                </p>
-              </a>
             </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-pie-chart"></i>
                 <p>
-                  چارت‌ها
+                  مدیریت کالاها
                   <i class="right fa fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/charts/chartjs.html" class="nav-link">
+                  <a href="{{route('kala.add')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>نمودار ChartJS</p>
+                    <p>ایجاد کالا جدید</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/charts/flot.html" class="nav-link">
+                  <a href="{{route('kala.index')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>نمودار Flot</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/inline.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>نمودار Inline</p>
+                    <p>مدیریت کالاها</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview">
+            <li class="nav-item">
+                <a href="{{route('darkhast.add')}}" class="nav-link">
+                  <i class="nav-icon fa fa-file"></i>
+                  <p>ثبت درخواست کالا</p>
+                </a>
+            </li>
+            {{-- <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-tree"></i>
                 <p>
@@ -319,7 +304,7 @@
                 <i class="nav-icon fa fa-circle-o text-info"></i>
                 <p>اطلاعات</p>
               </a>
-            </li>
+            </li> --}}
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

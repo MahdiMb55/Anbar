@@ -157,13 +157,13 @@
 
   <!-- Main Sidebar Container -->
   @yield('aside')
-  
+
 
   <!-- Content Wrapper. Contains page content -->
   @yield('content')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>CopyLeft &copy; 2018 <a href="http://github.com/hesammousavi/">حسام موسوی</a>.</strong>
+    <strong>CopyLeft &copy; 2023 .</strong>
   </footer>
 
   <!-- Control Sidebar -->
@@ -182,6 +182,50 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+
+<!-- Custom js for Darkhast table -->
+<script>
+      var rowCount = 1;
+
+// Add row
+$('#addRowBtn').click(function() {
+  rowCount++;
+  var newRow = '<tr>' +
+    '<td>' + rowCount + '</td>' +
+    '<td>'+
+        '<div class="form-group">'+
+                                '<select class="form-control select2" name="kala[]" style="width: 100%;">'+
+                                '</select>'+
+                              '</div>'+
+    '</td>'+
+    '<td>Vahed</td>'+
+    '<td>'+
+        '<input type="number" class="col-5 form-control" name="count[]" placeholder="تعداد درخواستی">'+
+    '</td>'+
+    '<td>'+
+    '<button type="button" class="btn btn-danger delete-btn-row">حذف</button>'+
+    '</td>'+
+    '</tr>';
+
+  $('.darkhast-table').append(newRow);
+});
+
+// Delete row
+$(document).on('click', '.delete-btn-row', function() {
+  $(this).closest('tr').remove();
+  rowCount--;
+  updateRowNumbers();
+});
+
+// Update row numbers
+function updateRowNumbers() {
+    alert('Hiiii');
+  $('.darkhast-table tr').each(function(index) {
+    $(this).find('td:first').text(index);
+  });
+}
+</script>
+
 <!-- Bootstrap 4 -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
